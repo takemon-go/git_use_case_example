@@ -122,19 +122,27 @@ $ git status
 
 ## show the changes
 
-between the index and the working tree.
+### between the index and the working tree.
 
 ```
 $ git diff
 ```
 
-between the latest commit and the index.
+### between the latest commit and the index.
+
+```
+$ git diff --cached
+```
+
+or
 
 ```
 $ git diff --staged
 ```
 
-between the latest commit and the working tree.
+`--staged` is a synonym of `--cached`.
+
+### between the latest commit and the working tree.
 
 ```
 $ git diff HEAD
@@ -149,7 +157,7 @@ $ git add README.md
 ```
 $ git status
 $ git diff
-$ git diff --staged
+$ git diff --cached
 $ git diff HEAD
 ```
 
@@ -162,7 +170,7 @@ $ sed -i "" "s/\[email\]/your email here/g" README.md
 ```
 $ git status
 $ git diff
-$ git diff --staged
+$ git diff --cached
 $ git diff HEAD
 ```
 
