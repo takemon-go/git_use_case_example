@@ -5,6 +5,11 @@
 * <https://git-scm.com/docs/>
 * <http://files.zeroturnaround.com/pdf/zt_git_cheat_sheet.pdf>
 
+# environment
+
+* macOS 10.14.2
+* git 2.19.0
+
 # config
 
 ```
