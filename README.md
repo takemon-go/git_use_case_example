@@ -76,14 +76,26 @@ $ curl -fsSL https://raw.githubusercontent.com/takemon-go/git_use_case_example/m
 $ git status
 ```
 
-## stage the file
+## stage a new file
 
 ```
 $ git add README.md
 ```
 
+* `git add -A` stages all changes.
+* `git add -u` stages modifications and deletions, without new files.
+* `git add .` stages new files and modifications in the current directory and its sub directories, without deletions.
+
 ```
 $ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
 ```
 
 ## commit
@@ -94,6 +106,8 @@ $ git commit
 
 ```
 $ git status
+On branch master
+nothing to commit, working tree clean
 ```
 
 ## edit the file
