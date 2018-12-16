@@ -148,7 +148,7 @@ $ git diff --staged
 $ git diff HEAD
 ```
 
-## stage the file
+## stage the modified file
 
 ```
 $ git add README.md
@@ -156,6 +156,14 @@ $ git add README.md
 
 ```
 $ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   README.md
+```
+
+```
 $ git diff
 $ git diff --cached
 $ git diff HEAD
