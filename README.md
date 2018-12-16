@@ -466,7 +466,6 @@ reset options:
 # other topics
 
 * .gitignore
-* log message format
 * log --grep, -S
 * tag
 * stash
@@ -474,5 +473,6 @@ reset options:
 * cherry-pick
 * blame
 * bisect
+* various other useful options of each commands
 * workflow management (Git Flow, Github Flow, ...)
 * :
