@@ -172,11 +172,22 @@ $ git diff HEAD
 ## edit the file
 
 ```
-$ sed -i "" "s/\[email\]/your email here/g" README.md
+$ sed -i "" "s/\[email\]/your email address here/g" README.md
 ```
 
 ```
 $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+```
 $ git diff
 $ git diff --cached
 $ git diff HEAD
@@ -187,8 +198,22 @@ $ git add README.md
 $ git commit -m "modified user name and email."
 ```
 
+or
+
 ```
-$ git log
+$ git commit -m "modified user name and email." README.md
+```
+
+or
+
+```
+$ git commit -am "modified user name and email."
+```
+
+* `git commit -a` is shorthand for `git add -u; git commit`.
+
+```
+$ git show
 ```
 
 ## replace the latest commit
