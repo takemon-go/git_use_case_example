@@ -42,8 +42,8 @@ $ git config --global core.editor "code --wait"
 ## init
 
 ```
-$ mkdir -p /tmp/repo1
-$ cd /tmp/repo1/
+$ mkdir -p ~/repos/repo1
+$ cd ~/repos/repo1/
 ```
 
 ```
@@ -225,8 +225,8 @@ $ git commit --amend
 # create shared repository
 
 ```
-$ mkdir -p /tmp/repo0
-$ pushd /tmp/repo0/
+$ mkdir -p ~/repos/repo0
+$ pushd ~/repos/repo0/
 ```
 
 ```
@@ -242,7 +242,7 @@ $ git remote -v
 ```
 
 ```
-$ git remote add origin /tmp/repo0
+$ git remote add origin ~/repos/repo0
 ```
 
 ```
@@ -256,7 +256,7 @@ $ git push --set-upstream origin master
 # clone repository
 
 ```
-$ cd /tmp/
+$ cd ~/repos/
 ```
 
 ```
@@ -266,13 +266,13 @@ $ git clone repo0 repo2
 # collaborate with other repositories
 
 ```
-$ cd /tmp/repo2/
+$ cd ~/repos/repo2/
 ```
 
 modify `README.md`, then
 
 ```
-/tmp/repo2 (master)
+~/repos/repo2 (master)
 $ git commit -F- README.md << __EOF__
 modified README, added contents about commit, shared repository, clone.
 
@@ -283,43 +283,43 @@ __EOF__
 ```
 
 ```
-/tmp/repo2 (master)
+~/repos/repo2 (master)
 $ git push
 ```
 
 ```
-$ cd /tmp/repo1/
+$ cd ~/repos/repo1/
 ```
 
 modify `README.md`, then
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git commit -m "modified README, added contents about collaboration with other repositories." README.md
 ```
 
 `git push` is rejected in this case.
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git push
-To /tmp/repo0
+To ~/repos/repo0
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to '/tmp/repo0'
+error: failed to push some refs to '~/repos/repo0'
 ```
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git fetch
 ```
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git log origin/master
 ```
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git rebase
     :
 CONFLICT (content): Merge conflict in README.md
@@ -341,7 +341,7 @@ edit `README.md` to merge conflict.
     >>>>>>> modified README, added contents about collaboration with other repositories.
 
 ```
-/tmp/repo1 (master|REBASE 1/1)
+~/repos/repo1 (master|REBASE 1/1)
 $ git add README.md
 $ git rebase --continue
 ```
@@ -350,14 +350,14 @@ $ git rebase --continue
 * `git pull --rebase` is short hand for `git fetch` followed by `git rebase`.
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git push
 ```
 
 # branch and merge
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git checkout -b add_topic_of_branch_and_merge
 Switched to a new branch 'add_topic_of_branch_and_merge'
 ```
@@ -372,33 +372,33 @@ $ git checkout add_topic_of_branch_and_merge
 modify `README.md`, then
 
 ```
-/tmp/repo1 (add_topic_of_branch_and_merge)
+~/repos/repo1 (add_topic_of_branch_and_merge)
 $ git commit -m "modified README, added topic of branch and merge." README.md
 ```
 
 if you need to push this branch:
 
 ```
-/tmp/repo1 (add_topic_of_branch_and_merge)
+~/repos/repo1 (add_topic_of_branch_and_merge)
 $ git push origin add_topic_of_branch_and_merge
 ```
 
 ```
-/tmp/repo1 (add_topic_of_branch_and_merge)
+~/repos/repo1 (add_topic_of_branch_and_merge)
 $ git checkout master
 Switched to branch 'master'
 Your branch is up to date with 'origin/master'.
 ```
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git log --graph --oneline --branches
 ```
 
 show branch list:
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git branch
 $ git branch -a
 ```
@@ -406,24 +406,24 @@ $ git branch -a
 merge the topic branch into master branch:
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git merge --no-ff add_topic_of_branch_and_merge
 ```
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git log --graph --oneline --branches
 ```
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git push
 ```
 
 if the topic branch is no longer necessary:
 
 ```
-/tmp/repo1 (master)
+~/repos/repo1 (master)
 $ git branch -d add_topic_of_branch_and_merge
 $ git push origin :add_topic_of_branch_and_merge
 ```
